@@ -1,5 +1,5 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import MyComponent from "./components/app.component";
+import ContactsList from "./components/contactsList";
 
-ReactDOM.render(<MyComponent />, document.querySelector("#root"));
+ReactDOM.render(<ContactsList />, document.querySelector("#root"));
