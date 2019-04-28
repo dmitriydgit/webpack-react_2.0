@@ -1,0 +1,32 @@
+[
+	{
+		"id": 1,
+		"text": "Lorem ipsum",
+		"color": "blue"
+	},
+	{
+		"id": 2,
+		"text": "aaa",
+		"color": "red"
+	},
+	{
+		"id": 3,
+		"text": "ccc",
+		"color": "brown"
+	},
+	{
+		"id": 4,
+		"text": "ddd",
+		"color": "black"
+	},
+	{
+		"id": 5,
+		"text": "aaa",
+		"color": "yellow"
+	},
+	{
+		"id": 6,
+		"text": "xxx",
+		"color": "green"
+	}
+]

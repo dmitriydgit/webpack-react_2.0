@@ -1,5 +1,5 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import ContactsList from "./components/contactsList";
+import NotesApp from "./components/notesApp";
 
-ReactDOM.render(<ContactsList />, document.querySelector("#root"));
+ReactDOM.render(<NotesApp />, document.getElementById("mount-point"));
