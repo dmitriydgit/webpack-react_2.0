@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import s from "./notesGrid.css";
+import PropTypes from 'prop-types'
 import Masonry from '../../node_modules/masonry-layout';
 import Note from '../components/note';
 
 class NotesGrid extends React.Component {
 	componentDidMount() {
-		var grid = this.refs.grid;
+		let grid = this.refs.grid;
 		this.msnry = new Masonry(grid, {
 			itemSelector: '.note',
 			columnWidth: 200,
@@ -22,7 +23,7 @@ class NotesGrid extends React.Component {
 	};
 
 	render() {
-		var onNoteDelete = this.props.onNoteDelete;
+		let onNoteDelete = this.props.onNoteDelete;
 
 		return (
 			<div className={s.notes_grid} ref="grid">
@@ -42,5 +43,10 @@ class NotesGrid extends React.Component {
 		);
 	}
 };
+
+NotesGrid.propTypes = {
+	notes: PropTypes.array,
+	note: PropTypes.object,
+}
 
 export default NotesGrid;

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import s from "./noteEditor.css";
+import PropTypes from 'prop-types';
 
-class NoteEditor extends React.Component {
+
+class NoteEditor extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -24,7 +26,7 @@ class NoteEditor extends React.Component {
 	}
 
 	handleNoteAdd() {
-		var newNote = {
+		let newNote = {
 			text: this.state.text,
 			color: this.state.color,
 			id: Date.now()
@@ -39,7 +41,7 @@ class NoteEditor extends React.Component {
 			<div className={s.note_editor}>
 				<input type="color" onChange={this.handleColorChange}></input>
 				<textarea
-					placeholder="Enter your note here..."
+					placeholder="Enter your note here ..."
 					rows={5}
 					className={s.textarea}
 					value={this.state.text}
@@ -50,5 +52,12 @@ class NoteEditor extends React.Component {
 		);
 	}
 };
+
+
+NoteEditor.propTypes = {
+	text: PropTypes.string,
+	color: PropTypes.string,
+
+}
 
 export default NoteEditor;

@@ -18,8 +18,10 @@ module.exports = {
 			{
 				test: /\.m?js$/,
 				exclude: /(node_modules|bower_components)/,
+				//loaders: ['react-hot-loader/webpack', 'babel-loader']
 				use: {
-					loader: "babel-loader"
+					loader: "babel-loader",
+					//	loader: "react-hot-loader/webpack"
 				}
 			},
 			{

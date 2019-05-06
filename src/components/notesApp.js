@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import s from "./notesApp.css";
+import PropTypes from 'prop-types';
 import NoteSearch from "./noteSearch";
 import NoteEditor from "./noteEditor";
 import NotesGrid from "./notesGrid";
 const articles = require('../articles.json');
+
 
 
 
@@ -19,10 +21,10 @@ class NotesApp extends React.Component {
 		this.handleSearch = this.handleSearch.bind(this)
 	}
 
+
+
 	componentDidMount() {
-		var localNotes = articles;
-		console.log(articles);
-		//var localNotes = JSON.parse(localStorage.getItem('notes'));
+		let localNotes = articles;
 		if (localNotes) {
 			this.setState({
 				notes: localNotes,
@@ -36,7 +38,7 @@ class NotesApp extends React.Component {
 	};
 
 	handleNoteAdd(newNote) {
-		var newNotes = this.state.notes.slice();
+		let newNotes = this.state.notes.slice();
 		newNotes.unshift(newNote);
 		this.setState(
 			{
@@ -48,8 +50,8 @@ class NotesApp extends React.Component {
 	};
 
 	handleNoteDelete(note) {
-		var noteId = note.id;
-		var newNotes = this.state.notes.filter(function (note) {
+		let noteId = note.id;
+		let newNotes = this.state.notes.filter(function (note) {
 			return note.id !== noteId;
 		});
 		this.setState({
@@ -60,10 +62,10 @@ class NotesApp extends React.Component {
 	};
 
 	handleSearch(e) {
-		var searchQuery = e.target.value;
+		let searchQuery = e.target.value;
 
 		if (e.keyCode === 13) {
-			var searchedNotes = this.state.notes.filter(function (note) {
+			let searchedNotes = this.state.notes.filter(function (note) {
 				return note.text.toLowerCase().indexOf(searchQuery) !== -1;
 			})
 			this.setState({
@@ -92,10 +94,17 @@ class NotesApp extends React.Component {
 	};
 
 	_updateLocalStorage() {
-		var notes = JSON.stringify(this.state.notes);
+		let notes = JSON.stringify(this.state.notes);
 		localStorage.setItem('notes', notes);
 	}
 };
+
+
+NotesApp.propTypes = {
+	notes: PropTypes.array,
+	notesBackup: PropTypes.array,
+
+}
 
 export default NotesApp;
 
